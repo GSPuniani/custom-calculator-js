@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    /* Move the content to the center */
+    justify-content: center;
+    /* Give the background color a green hue to connect with the idea of money */
+    background-color: lightgreen;
+    /* Adjust font color to something that matches the background */
+    color: darkblue;
+    /* Use sans-serif font for a simpler look */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    display: flex;
+    /* Move the heading to the center */
+    justify-content: center;
+    /* Add margin to the bottom to give space between the heading and the body */
+    margin-bottom: 1.5em;
+    /* Make the heading huge */
+    font-size: 4em;
+}
+
+main {
+    display: flex;
+    /* Organize the body into a single column rather than a row */
+    flex-direction: column;
+    /* Add padding for space */
+    padding: 2em;
+}
+
+main div {
+    display: flex;
+    /* Adjust padding to move the display numbers closer to the text descriptions */
+    padding: 0em 2em 3em 0em;
+    /* Increase the font size */
+    font-size: larger;
+    /* Move the display numbers to the right side of the box to balance the column*/
+    justify-content: flex-end;
+    /* Make the display numbers bold because they are significant  */
+    font-weight: bold;
+}
+
+main input {
+    /* Put space between the input field and the label */
+    margin: 0.3em 0 1.4em 0;
+}
+
+label {
+    display: flex;
+    /* Organize labels into columns to give each label and input field its own line */
+    flex-direction: column;
+    /* Add padding on the left to center the labels more */
+    padding-left: 2em;
+}
