@@ -23,9 +23,9 @@
             <label>
                 Interest Rate (%): <input id="interest-rate" value="10" type="number">
             </label>
-            <!-- Label for time, where time value is entered as a number and time units are selected from the drop-down menu -->
+            <!-- Label for time, where time value is a number and time units are selected from the drop-down menu -->
             <label>
-                Time: <input id="time" value="2" type="number"><select id="select-time-units">
+                Time: <input id="time" value="2" type="number" min="0"><select id="select-time-units">
                     <option id="year" value="Years">Years</option>
                     <option id="month">Months</option>
                     <option id="day">Days</option>
@@ -33,7 +33,8 @@
             </label>
             <!-- Label for "n", or number of times interest is compounded per unit of time  -->
             <label>
-                Number of times interest is compounded per <label id="n-unit-label"> year</label> <input id="n" value="1" type="number"> 
+                Number of times interest is compounded per <label id="n-unit-label"> year</label>: 
+                <input id="n" value="1" type="number" min="0"> 
             </label>
         </main>
           

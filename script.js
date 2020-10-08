@@ -22,13 +22,13 @@ function calculateCompoundInterest() {
     const nValue = nInput.value
 
     // Adjust prompt for number of times interest is compounded by displaying correct unit of time according to user selection
-    if (unitValue === "Years") {
+    if (unitValue === "Years" || unitValue === "Year") {
         nLabel.innerHTML = " year"
     }
-    else if (unitValue === "Months") {
+    else if (unitValue === "Months" || unitValue === "Month") {
         nLabel.innerHTML = " month"
     }
-    else if (unitValue === "Days") {
+    else if (unitValue === "Days" || unitValue === "Day") {
         nLabel.innerHTML = " day"
     }
 
