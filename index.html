@@ -12,23 +12,23 @@
             <h1>Compound Interest Calculator</h1>
             <!-- Labels identify input fields and display numbers -->
             <label>
-                Total Amount (including Interest): $<div id="display">110.00</div>
+                Total Amount (including Interest): <div id="display">$121.00</div>
             </label>
             <label>
-                Principal Amount: $<input id="principal" value="100.00" type="number">
+                Principal Amount: $<input id="principal" value="100.00" step="0.01" type="number">
             </label>
             <label>
                 Interest Rate: <input id="interest-rate" value="10" type="number">%
             </label>
             <label>
-                Time: <input id="time" value="1" type="number"><select id="select-time-units">
-                    <option value="years">Year(s)</option>
-                    <option>Month(s)</option>
-                    <option>Day(s)</option>
+                Time: <input id="time" value="2" type="number"><select id="select-time-units">
+                    <option id="year" value="Years">Years</option>
+                    <option id="month">Months</option>
+                    <option id="day">Days</option>
                     </select>
             </label>
             <label>
-                Number of times interest is compounded per year, month, or day: <input id="n" value="1" type="number"> times
+                Number of times interest is compounded per <label id="n-unit-label"> year</label> <input id="n" value="1" type="number"> 
             </label>
         </main>
           

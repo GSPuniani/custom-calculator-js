@@ -1,27 +1,61 @@
-const tipPerPerson = document.querySelector("#display1")
-// Full total includes tip and is also to be displayed along with tip amount
-const fullTotal = document.querySelector("#display2")
-const billInput = document.querySelector("#bill")
-const tipInput = document.querySelector("#tip-percentage")
-// Include an input for number of people so that the tip can be distributed equally
-const peopleInput = document.querySelector("#people")
+// Full total includes interest and is the big value to be displayed
+// const fullAmount = document.querySelector("#display")
+// 
+const principalInput = document.querySelector("#principal")
+const interestInput = document.querySelector("#interest-rate")
+const timeInput = document.querySelector("#time")
+const timeUnits = document.querySelector("#select-time-units")
+const nInput = document.querySelector("#n")
 
-function calculateTip() {
-    const billValue = billInput.value
-    const tipValue = tipInput.value
-    const peopleValue = peopleInput.value
+// Assign options for time units in drop-down menu to variables to adjust labels depending on the time value entered
+const yearSingular = document.querySelector("#year")
+const monthSingular = document.querySelector("#month")
+const daySingular = document.querySelector("#day")
 
-    // Tip amount must be divided by the number of people and divided by 100 because tip percentage is used
-    const tipAmount = billValue * tipValue / (100 * peopleValue)
-    // The final total is the bill plus the product of the bill and tip divided by 100
-    const finalTotal = billValue * (1 + tipValue / 100)
+// Assign label for n to a variable to adjust the label text depending on the units selected in the drop-down menu
+const nLabel = document.querySelector("#n-unit-label")
 
-    display1.innerHTML = tipAmount.toFixed(2)
+function calculateCompoundInterest() {
+    const principalValue = principalInput.value
+    const interestValue = interestInput.value
+    const timeValue = timeInput.value
+    const unitValue = timeUnits.value
+    const nValue = nInput.value
+
+    if (unitValue === "Years") {
+        nLabel.innerHTML = " year"
+    }
+    else if (unitValue === "Months") {
+        nLabel.innerHTML = " month"
+    }
+    else if (unitValue === "Days") {
+        nLabel.innerHTML = " day"
+    }
+
+
+    // Adjust the units of the drop-down menu to singular form if the time entered is 1
+    if (timeValue == 1) {
+        yearSingular.innerHTML = "Year"
+        monthSingular.innerHTML = "Month"
+        daySingular.innerHTML = "Day"
+    }
+    else {
+        yearSingular.innerHTML = "Years"
+        monthSingular.innerHTML = "Months"
+        daySingular.innerHTML = "Days"
+    }
+
+    
+    const fullAmount = principalValue * Math.pow(1 + interestValue / (100 * nValue), nValue * timeValue)
+
+    display.innerHTML = "$" + fullAmount.toFixed(2)
 }
 
-billInput.addEventListener("input", calculateTip)
-tipInput.addEventListener("input", calculateTip)
-peopleInput.addEventListener("input", calculateTip)
+principalInput.addEventListener("input", calculateCompoundInterest)
+interestInput.addEventListener("input", calculateCompoundInterest)
+timeInput.addEventListener("input", calculateCompoundInterest)
+timeUnits.addEventListener("change", calculateCompoundInterest)
+nInput.addEventListener("input", calculateCompoundInterest)
 
 
 
