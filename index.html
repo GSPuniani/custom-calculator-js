@@ -9,22 +9,26 @@
 
     <body>
         <main>
-            <h1>Custom Calculator</h1>
+            <h1>Compound Interest Calculator</h1>
             <!-- Labels identify input fields and display numbers -->
             <label>
-                Amount Each Person Should Tip:<div id="display1">1.50</div>
+                Total Amount (including Interest): $<div id="display">110.00</div>
             </label>
             <label>
-                Full Total Including Tip:<div id="display2">11.50</div>
+                Principal Amount: $<input id="principal" value="100.00" type="number">
             </label>
             <label>
-                Bill Subtotal<input id="bill" value="10.00" type="number">
+                Interest Rate: <input id="interest-rate" value="10" type="number">%
             </label>
             <label>
-                Tip Percentage<input id="tip-percentage" value="15" type="number">
+                Time: <input id="time" value="1" type="number"><select id="select-time-units">
+                    <option value="years">Year(s)</option>
+                    <option>Month(s)</option>
+                    <option>Day(s)</option>
+                    </select>
             </label>
             <label>
-                Number of People Splitting the Bill<input id="people" value="1" type="number">
+                Number of times interest is compounded per year, month, or day: <input id="n" value="1" type="number"> times
             </label>
         </main>
           

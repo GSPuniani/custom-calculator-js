@@ -17,7 +17,6 @@ function calculateTip() {
     const finalTotal = billValue * (1 + tipValue / 100)
 
     display1.innerHTML = tipAmount.toFixed(2)
-    display2.innerHTML = finalTotal.toFixed(2)
 }
 
 billInput.addEventListener("input", calculateTip)
