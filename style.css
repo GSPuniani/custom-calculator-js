@@ -11,6 +11,7 @@ body {
 }
 
 h1 {
+    /* Adjust heading color */
     color: indigo;
     display: flex;
     /* Move the heading to the center */
@@ -19,6 +20,14 @@ h1 {
     margin-bottom: 1.5em;
     /* Make the heading huge */
     font-size: 4em;
+}
+
+#display-label {
+    display: flex;
+    /* Center the label for the full amount */
+    justify-content: center;
+    /* Make the font a little bigger */
+    font-size: larger;
 }
 
 main {
@@ -51,6 +60,6 @@ label {
     /* Organize labels into columns to give each label and input field its own line */
     /* flex-direction: column; */
     /* Add padding on the left to center the labels more */
-    /* padding-left: 2em; */
+    padding-left: 2em;
     align-items: baseline;
 }

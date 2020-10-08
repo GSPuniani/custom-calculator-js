@@ -1,6 +1,4 @@
-// Full total includes interest and is the big value to be displayed
-// const fullAmount = document.querySelector("#display")
-// 
+// Create variables for each input element
 const principalInput = document.querySelector("#principal")
 const interestInput = document.querySelector("#interest-rate")
 const timeInput = document.querySelector("#time")
@@ -16,12 +14,14 @@ const daySingular = document.querySelector("#day")
 const nLabel = document.querySelector("#n-unit-label")
 
 function calculateCompoundInterest() {
+    // Assign input values to new variables
     const principalValue = principalInput.value
     const interestValue = interestInput.value
     const timeValue = timeInput.value
     const unitValue = timeUnits.value
     const nValue = nInput.value
 
+    // Adjust prompt for number of times interest is compounded by displaying correct unit of time according to user selection
     if (unitValue === "Years") {
         nLabel.innerHTML = " year"
     }
@@ -46,11 +46,15 @@ function calculateCompoundInterest() {
     }
 
     
+    // Calculate the full amout using the formula for compound interest
+    // interestValue is divided by 100 to convert the percentage into a decimal value
     const fullAmount = principalValue * Math.pow(1 + interestValue / (100 * nValue), nValue * timeValue)
 
+    // Change the display to read the calculated full amount with digits after the decimal place
     display.innerHTML = "$" + fullAmount.toFixed(2)
 }
 
+// Create event listeners so that the total amount is adjusted every time an input value is changed
 principalInput.addEventListener("input", calculateCompoundInterest)
 interestInput.addEventListener("input", calculateCompoundInterest)
 timeInput.addEventListener("input", calculateCompoundInterest)
